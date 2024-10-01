@@ -109,14 +109,13 @@ canvas.addEventListener('mousedown', (e) => {
 // Guardar el lienzo como imagen
 document.getElementById('saveButton').addEventListener('click', () => {
     const imageData = canvas.toDataURL('image/png', 1.0);
-
-    // Abrir la nueva página con la imagen
-    const newTabUrl = `saver.html?image=${encodeURIComponent(imageData)}`;
-    window.open(newTabUrl);
+    
+    // Guardar la imagen en localStorage
+    localStorage.setItem('savedImage', imageData);
+    
+    // Abrir la nueva página de visualización
+    window.open('saver.html');
 });
-
-
-
 
 // Bote de pintura
 document.getElementById('bucketButton').addEventListener('click', () => {

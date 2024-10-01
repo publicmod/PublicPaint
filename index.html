@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Pintura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="toolbar">
+        <div class="button-container">
+            <input type="color" id="colorPicker" style="display: none;">
+            <button id="colorButton" class="circular-button">
+                <img src="https://i.imgur.com/GXJ6KS1.png" alt="Color" class="color-icon">
+            </button>
+            <button id="brushSizeButton" class="circular-button">
+                <img src="https://i.imgur.com/75pWmLB.png" alt="Tamaño Pincel" class="button-icon">
+            </button>
+            <input type="range" id="brushSize" class="size-slider" min="1" max="50" value="5" style="display: none;">
+            <button id="eraserButton" class="circular-button">
+                <img src="https://i.imgur.com/HEnRKTE.png" alt="Goma" class="button-icon">
+            </button>
+            <input type="range" id="eraserSize" class="size-slider" min="1" max="50" value="10" style="display: none;">
+            <button id="bucketButton" class="circular-button">
+                <img src="https://i.imgur.com/2Wr14KJ.png" alt="Bote de Pintura" class="button-icon">
+            </button>
+        </div>
+        <div class="button-container">
+            <button id="undoButton" class="circular-button">
+                <img src="https://i.imgur.com/dKQ9SkF.png" alt="Deshacer" class="button-icon">
+            </button>
+            <button id="redoButton" class="circular-button">
+                <img src="https://i.imgur.com/MZABVY3.png" alt="Rehacer" class="button-icon">
+            </button>
+            <button id="saveButton" class="circular-button">
+                <img src="https://i.imgur.com/YG5JBZ7.png" alt="Guardar" class="button-icon">
+            </button>
+        </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>

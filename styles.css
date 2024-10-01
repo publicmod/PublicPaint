@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ff0000; /* Fondo rojo */
+}
+
+#toolbar {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+/* Estilos para los botones circulares */
+button.circular-button {
+    background-color: white;
+    border: none;
+    border-radius: 50%; /* Hace que los botones sean circulares */
+    padding: 10px;
+    margin: 10px 0; /* Espaciado entre los botones */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 60px;  /* Ancho del botón circular */
+    height: 60px; /* Alto del botón circular */
+    font-size: 24px; /* Ajusta el tamaño del texto o iconos dentro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de los botones */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.circular-button:hover {
+    background-color: lightgray;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más intensa al pasar el ratón */
+}
+
+button.circular-button:active {
+    transform: scale(0.95); /* Efecto de compresión al hacer clic */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduce la sombra al hacer clic */
+}
+
+/* Ajuste del icono dentro de los botones */
+button.circular-button img.button-icon {
+    width: 80%; /* Tamaño de la imagen dentro del botón */
+    height: 80%; /* Tamaño de la imagen dentro del botón */
+    object-fit: contain; /* Asegura que la imagen se ajuste al botón */
+}
+
+/* Estilo específico para el botón de color */
+button#colorButton {
+    position: relative;
+    background-color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+/* Ajuste del icono dentro del botón de color */
+button#colorButton img.color-icon {
+    width: 80%; /* Tamaño de la imagen dentro del botón */
+    height: 80%; /* Tamaño de la imagen dentro del botón */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+}
+
+.size-slider {
+    display: none; /* Inicialmente oculto */
+}
+
+canvas {
+    border: 1px solid #000;
+    background-color: #fff;
+    width: 720px; /* Resolución del lienzo */
+    height: 1080px; /* Resolución del lienzo */
+}

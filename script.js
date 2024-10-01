@@ -110,38 +110,11 @@ canvas.addEventListener('mousedown', (e) => {
 document.getElementById('saveButton').addEventListener('click', () => {
     const imageData = canvas.toDataURL('image/png', 1.0);
 
-    // Abrir la imagen en una nueva pestaña
-    const newTab = window.open();
-    newTab.document.body.innerHTML = `
-        <style>
-            body {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                margin: 0;
-                background-color: #fff;
-            }
-            img {
-                max-width: 90%;
-                max-height: 90%;
-            }
-            button {
-                display: block;
-                margin: 20px auto;
-                padding: 10px 20px;
-                font-size: 16px;
-                cursor: pointer;
-            }
-        </style>
-        <img src="${imageData}" alt="Drawing">
-        <a href="${imageData}" download="drawing.png">
-            <button>Descargar Imagen</button>
-        </a>
-        <button onclick="window.close()">Regresar</button>
-    `;
+    // Abrir la nueva página con la imagen
+    const newTabUrl = `saver.html?image=${encodeURIComponent(imageData)}`;
+    window.open(newTabUrl);
 });
+
 
 
 

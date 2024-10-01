@@ -106,13 +106,24 @@ canvas.addEventListener('mousedown', (e) => {
     }
 });
 
-// Guardar el lienzo como imagen
+// Guardar el lienzo como imagen en una nueva pestaña antes de descargar
 document.getElementById('saveButton').addEventListener('click', () => {
+    const dataURL = canvas.toDataURL('image/png', 1.0);
+    
+    // Crea un enlace para la descarga
     const link = document.createElement('a');
+    link.href = dataURL;
     link.download = 'drawing.png';
-    link.href = canvas.toDataURL('image/png', 1.0);
+    
+    // Abrir la imagen en una nueva pestaña
+    const newTab = window.open();
+    newTab.document.write('<img src="' + dataURL + '" alt="Drawing"/>');
+
+    // Inicia la descarga automáticamente
     link.click();
+    
 });
+
 
 // Bote de pintura
 document.getElementById('bucketButton').addEventListener('click', () => {

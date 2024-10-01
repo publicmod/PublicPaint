@@ -35,14 +35,17 @@
     <button onclick="window.history.back()">Regresar</button>
 
     <script>
-        // Obtener la imagen pasada desde la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const imageData = urlParams.get('image');
+        // Obtener la imagen desde localStorage
+        const imageData = localStorage.getItem('savedImage');
         const imgElement = document.getElementById('savedImage');
         const downloadLink = document.getElementById('downloadLink');
 
-        imgElement.src = imageData; // Establecer la fuente de la imagen
-        downloadLink.href = imageData; // Establecer el enlace de descarga
+        if (imageData) {
+            imgElement.src = imageData; // Establecer la fuente de la imagen
+            downloadLink.href = imageData; // Establecer el enlace de descarga
+        } else {
+            imgElement.alt = "No hay imagen guardada"; // Mensaje alternativo si no hay imagen
+        }
     </script>
 </body>
 </html>

@@ -109,8 +109,8 @@ canvas.addEventListener('mousedown', (e) => {
 // Guardar el lienzo como imagen
 document.getElementById('saveButton').addEventListener('click', () => {
     const link = document.createElement('a');
-    link.download = 'drawing.jpg';
-    link.href = canvas.toDataURL('image/jpeg', 1.0);
+    link.download = 'drawing.png';
+    link.href = canvas.toDataURL('image/png', 1.0);
     link.click();
 });
 

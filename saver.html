@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Guardada</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff;
+        }
+        img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img id="savedImage" alt="Drawing">
+    <a id="downloadLink" href="#" download="drawing.png">
+        <button>Descargar Imagen</button>
+    </a>
+    <button onclick="window.history.back()">Regresar</button>
+
+    <script>
+        // Obtener la imagen pasada desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const imageData = urlParams.get('image');
+        const imgElement = document.getElementById('savedImage');
+        const downloadLink = document.getElementById('downloadLink');
+
+        imgElement.src = imageData; // Establecer la fuente de la imagen
+        downloadLink.href = imageData; // Establecer el enlace de descarga
+    </script>
+</body>
+</html>

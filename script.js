@@ -114,7 +114,7 @@ document.getElementById('saveButton').addEventListener('click', () => {
     localStorage.setItem('savedImage', imageData);
     
     // Abrir la nueva página de visualización
-    window.open('image-viewer.html');
+    window.open('saver.html');
 });
 
 // Bote de pintura
